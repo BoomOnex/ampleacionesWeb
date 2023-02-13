@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <header>
+        <a href="#" class="logo">Construciones y ampleaciones</a>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home" class="active">Inicio</a></li>
+                <li><a href="#review" >Imagenes</a></li>
+                <li><a href="#contact" >Contacto</a></li>
+            </ul>
+            
+        </nav>
+        <div class="fas fa-bars"></div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="content">
+            <h1>ampleaciones y remodelaciones</h1>
+            <p>tiempo de experiencia 10 años, trabajos en la ciudad de puerto montt , chile.</p>
+        </div>
+    </section>
+
+
+    <section class="product" id="product">
+
+        <div class="box-container">
+
+            <div class="box">
+                <i class="fab fa-apple"></i>
+                <h3>Lorem</h3>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="review" id="review">
+
+        <h3 class="title">Imagenes de ultimos trabajos realizados</h3>
+
+        <div class="box-container">
+            <div class="box">
+                <img src="images/img3.jpeg" alt="">
+                <h3>BOSQUE MAR</h3>
+                <p>REMODELACION BAÑO</p>
+            </div>
+            <div class="box">
+                <img src="images/img2.jpeg" alt="">
+                <h3>VALLE VOLCANES</h3>
+                <p>CONSTRUCION TECHO PATIO</p>
+            </div>
+            <div class="box">
+                <img src="images/img1.jpeg" alt="">
+                <h3>MIRASOL</h3>
+                <p>Ampleacion 2do piso</p>
+            </div>
+            <div class="box">
+                <img src="images/img4.jpeg" alt="">
+                <h3>MIRASOL</h3>
+                <p>Ampleacion 2do piso</p>
+            </div>
+            <div class="box">
+                <img src="images/img5.jpeg" alt="">
+                <h3>MIRASOL</h3>
+                <p>Ampleacion 2do piso</p>
+            </div>
+            <div class="box">
+                <img src="images/img6.jpeg" alt="">
+                <h3>MIRASOL</h3>
+                <p>Ampleacion 2do piso</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="contact" id="contact">
+
+        <h1 class="heading">Contacto</h1>
+        <div class="row">
+            <div class="form-container">
+
+                <form action="">
+                    <input type="text" placeholder="Nombre">
+                    <input type="email" placeholder="Correo">
+                    <input type="number" placeholder="Telefono">
+                    <textarea cols="15" rows="5" placeholder="Mensaje"></textarea >
+                    <input type="submit" value="Enviar">        
+                </form>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="footer">
+
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function() {
+
+            $('.fa-bars').click(function() {
+
+                $(this).toggleClass('fa-times');
+                $('.navbar').toggleClass('nav-toggle');
+
+            });
+
+            $(window).on('scroll load', function() {
+
+                $('.fa-bars').removeClass('fa-times');
+                $('.navbar').removeClass('nav-toggle');
+
+                $('section').each(function() {
+
+                    var id = $(this).attr('id');
+                    var height = $(this).height();
+                    var offset = $(this).offset().top -200;
+                    var top = $(window).scrollTop();
+
+                    if(top >= offset && top < offset + height) {
+                        $('.navbar ul li a').removeClass('active');
+                        $('.navbar').find('[href="#'+id+'"]').addClass('active');
+                    }
+
+                });
+
+            });
+
+        });
+
+    </script>
+    
+</body>
+</html>
